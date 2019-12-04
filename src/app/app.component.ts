@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'the-pink-floyd-sound-WEB';
+  title = 'The Pink Floyd Sound';
 }

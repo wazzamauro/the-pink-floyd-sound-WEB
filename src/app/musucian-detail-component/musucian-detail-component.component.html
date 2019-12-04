@@ -1,0 +1,21 @@
+<div *ngIf="musician" class="detail">
+    <h2>{{musician.name}} Details</h2>
+    <div><span>id: </span> {{musician.id}}
+    </div>
+    <div>
+        <label>name:
+                <input [(ngModel)]="musician.name" placeholder="name" />
+            </label>
+    </div>
+    <div>
+        <label>surname:
+                <input [(ngModel)]="musician.surname" placeholder="surname" />
+            </label>
+    </div>
+    <div>
+        <label>age:
+                <input [(ngModel)]="musician.age" placeholder="age" />
+            </label>
+    </div>
+
+</div>

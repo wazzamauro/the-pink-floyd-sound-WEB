@@ -1,0 +1,12 @@
+header {
+    background-color: rgb(180, 203, 204);
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+ul>li {
+    margin-left: 10px;
+}

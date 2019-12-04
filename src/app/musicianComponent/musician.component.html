@@ -1,0 +1,8 @@
+<h2>All Musicians</h2>
+<ul class="musicians">
+    <li *ngFor="let musician of musicians" [class.selected]="musician === selectedMusician" (click)="onSelect(musician)">
+        <span class="badge">{{musician.id}}</span> {{musician.name}} {{musician.surname}}
+    </li>
+</ul>
+
+<app-musucian-detail-component [musician]="selectedMusician"></app-musucian-detail-component>
