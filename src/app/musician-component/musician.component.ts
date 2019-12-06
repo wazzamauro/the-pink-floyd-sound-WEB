@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Musician } from '../musician';
+import {MusicianServicesService} from '../musicianServices/musician-services.service'
 
 import { MUSICIANS } from '../mock-musicians';
 
@@ -16,16 +17,19 @@ export class MusicianComponent implements OnInit {
   onSelect(musician: Musician){
     this.selectedMusician = musician;
   }
+  
+  musician$;
 
-  constructor() { }
+  constructor(private musicianService: MusicianServicesService){
+   
+  }
+
+  fetchMusician(){
+    this.musician$ = this.musicianService.fetchMusician();
+  }
 
   ngOnInit() {
   }
 
-  musician: Musician = {
-    id: 1,
-    name: 'Roger',
-    surname: 'Waters',
-    age: 75
-  };
+
 }

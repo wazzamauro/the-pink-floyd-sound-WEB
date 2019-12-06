@@ -1,0 +1,6 @@
+<hr/>
+<button type="button" class="btn btn-primary" (click)="fetchPerson()">Get Person</button>
+<hr/>
+<ul>
+    <li *ngFor="let person of persons"> {{person.id}}: {{person.name}} {{person.surname}}, {{person.age}}</li>
+</ul>

@@ -1,6 +1,7 @@
 import { Musician } from './musician';
+import { Person } from './person';
 
-export const MUSICIANS: Musician[] = [
+export const MUSICIANS: Person[] = [
     { id: 11, name: 'Dr Nice', surname: 'Gino', age:10  },
     { id: 12, name: 'Narco', surname: 'Gino', age:10 },
     { id: 13, name: 'Bombasto', surname: 'Gino', age:10 },
