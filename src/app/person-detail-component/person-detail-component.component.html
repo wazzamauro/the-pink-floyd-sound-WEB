@@ -1,37 +1,31 @@
-<div *ngIf="musician" class=musician-detail>
-    <h2>Who is {{musician.firstName}}?</h2>
+<div *ngIf="person" class=person-detail>
+    <h2>Who is {{person.firstName}}?</h2>
     <ul class="list" style="list-style-type:none">
         <li>
             <h6>
                 id:
             </h6>
             <h6>
-                {{musician.id}}
+                {{person.id}}
             </h6>
         </li>
         <li>
             <h6>
                 Name:
             </h6>
-            <h4>{{musician.firstName}}</h4>
+            <h4>{{person.firstName}}</h4>
         </li>
         <li>
             <h6>
                 Surname:
             </h6>
-            <h4>{{musician.lastName}}</h4>
+            <h4>{{person.lastName}}</h4>
         </li>
         <li>
             <h6>
                 Age:
             </h6>
-            <h4>{{musician.age}}</h4>
-        </li>
-        <li>
-            <h6>
-                Role:
-            </h6>
-            <h4>{{musician.role}}</h4>
+            <h4>{{person.age}}</h4>
         </li>
     </ul>
 

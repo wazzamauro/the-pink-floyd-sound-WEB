@@ -1,8 +1,7 @@
 export class Musician{
-
     id:number;
-    name:string;
-    surname:string;
+    firstName:string;
+    lastName:string;
     age:number;
     role:string;
 }

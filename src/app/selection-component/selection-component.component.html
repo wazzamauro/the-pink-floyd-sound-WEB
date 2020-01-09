@@ -1,0 +1,31 @@
+<div class="top-nav" id="top-nav" style="visibility: hidden">
+    <hr />
+    <ul style="list-style-type: none" class="nav-ul">
+        <li>
+            <a routerLink="/person"><button type="button" id="top-nav-fp" class="btn btn-primary"
+                    style="visibility: visible" (click)="importPerson()">Start App</button></a>
+
+        </li>
+        <li>
+            <a routerLink="/person"><button type="button" id="top-nav-gp" class="btn btn-primary"
+                    style="visibility: hidden" (click)="getPerson()" (click)="showPersonComponent()">Get Person</button></a>
+
+        </li>
+        <li>
+            <a routerLink="/musician"><button type="button" id="top-nav-cb" class="btn btn-primary"
+                    style="visibility: hidden" (click)="importMusicians()">Create Band</button></a>
+        </li>
+        <li>
+            <a routerLink="/musician"><button type="button" id="top-nav-gm" class="btn btn-primary"
+                    style="visibility: hidden" (click)="getMusicians()" (click)="showMusicianComponent()"> Get Musicians</button></a>
+        </li>
+    </ul>
+    <hr />
+</div>
+
+<div id="personComponent">
+    <app-person-component [persons]="persons"></app-person-component>
+</div>
+<div id="musicianComponent">
+    <app-musician [musicians]="musicians"></app-musician>
+</div>

@@ -1,6 +1,12 @@
-<hr/>
-<button type="button" class="btn btn-primary" (click)="fetchPerson()">Get Person</button>
-<hr/>
-<ul>
-    <li *ngFor="let person of persons"> {{person.id}}: {{person.name}} {{person.surname}}, {{person.age}}</li>
-</ul>
+<div class="layout">
+    <div class="list">
+        <ul class="persons">
+            <li *ngFor="let person of persons" [class.selected]="person === selectedPerson" (click)="onSelect(person)">
+                <span class="badge">{{person.id}}</span> {{person.firstName}} {{person.lastName}}
+            </li>
+        </ul>
+    </div>
+    <div class="detail">
+        <app-person-detail-component [person]="selectedPerson"></app-person-detail-component>
+    </div>
+</div>

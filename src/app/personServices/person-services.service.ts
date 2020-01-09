@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http'
+import { HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Person } from '../person';
 
@@ -7,15 +7,11 @@ import { Person } from '../person';
   providedIn: 'root'
 })
 export class PersonServicesService {
-  
-    httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    };
-    
+
   constructor(private http: HttpClient) { }
 
   importPerson(): Observable<string> {
-   return this.http.get<string>('http://localhost:8080/api/person/import');
+    return this.http.get<string>('http://localhost:8080/api/person/import'); 
   }
 
   fetchPerson(): Observable<Person[]> {

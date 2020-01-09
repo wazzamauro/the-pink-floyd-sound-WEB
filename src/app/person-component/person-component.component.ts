@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 import { PersonServicesService } from '../personServices/person-services.service'
 import { Person } from '../person';
 
@@ -9,7 +9,8 @@ import { Person } from '../person';
 })
 export class PersonComponentComponent implements OnInit {
 
-  persons: Person[];
+  @Input() persons: Person[];
+  selectedPerson: Person;
 
   constructor(private personService: PersonServicesService) {
   }
@@ -17,9 +18,7 @@ export class PersonComponentComponent implements OnInit {
   ngOnInit() {
   }
 
-  fetchPerson() {
-    this.personService.fetchPerson().subscribe(persons => this.persons = persons);
+  onSelect(person: Person) {
+    this.selectedPerson = person;
   }
-
-
 }

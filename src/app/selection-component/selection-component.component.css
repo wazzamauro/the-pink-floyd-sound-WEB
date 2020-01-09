@@ -1,0 +1,9 @@
+.top-nav .nav-ul {
+    display: flex;
+    justify-items: self-start;
+}
+
+.top-nav .nav-ul>li {
+    display: flex;
+    margin-left: 1em;
+}

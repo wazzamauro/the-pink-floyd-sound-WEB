@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Musician } from '../musician';
-import {MusicianServicesService} from '../musicianServices/musician-services.service'
-
-import { MUSICIANS } from '../mock-musicians';
+import { MusicianServicesService } from '../musicianServices/musician-services.service'
 
 @Component({
   selector: 'app-musician',
@@ -11,25 +9,16 @@ import { MUSICIANS } from '../mock-musicians';
 })
 export class MusicianComponent implements OnInit {
 
-  musicians = MUSICIANS;
-
+  @Input() musicians: Musician[];
   selectedMusician: Musician;
-  onSelect(musician: Musician){
-    this.selectedMusician = musician;
-  }
-  
-  musician$;
 
-  constructor(private musicianService: MusicianServicesService){
-   
-  }
-
-  fetchMusician(){
-    this.musician$ = this.musicianService.fetchMusician();
+  constructor(private musicianService: MusicianServicesService) {
   }
 
   ngOnInit() {
   }
 
-
+  onSelect(musician: Musician) {
+    this.selectedMusician = musician;
+  }
 }

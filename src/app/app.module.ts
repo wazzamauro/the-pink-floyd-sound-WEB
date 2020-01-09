@@ -16,18 +16,20 @@ import { MusicianDetailComponentComponent } from './musician-detail-component/mu
 
 import { PersonComponentComponent } from './person-component/person-component.component';
 import { PersonServicesService } from './personServices/person-services.service';
+import { PersonDetailComponentComponent } from './person-detail-component/person-detail-component.component';
+import { SelectionComponentComponent } from './selection-component/selection-component.component';
+import { PathRegistry } from './selection-component/PathRegistry.enum';
+import { ContentComponentComponent } from './content-component/content-component.component';
+import { HeaderComponentComponent } from './header-component/header-component.component';
 
 const appRoutes: Routes = [
   {
-    path: 'musicians',
-    pathMatch:'full',
-    component: MusicianComponent
-  },
-  {
-    path: 'person',
-    pathMatch:'full',
-    component: PersonComponentComponent
+    path: PathRegistry.ROOT, component: ContentComponentComponent, children: [
+      { path: PathRegistry.MUSICIAN, component: MusicianComponent },
+      { path: PathRegistry.PERSON, component: PersonComponentComponent }
+    ]
   }
+
 ]
 
 @NgModule({
@@ -36,7 +38,10 @@ const appRoutes: Routes = [
     MusicianComponent,
     MusicianDetailComponentComponent,
     PersonComponentComponent,
-    
+    PersonDetailComponentComponent,
+    SelectionComponentComponent,
+    ContentComponentComponent,
+    HeaderComponentComponent
   ],
   imports: [
     BrowserModule,

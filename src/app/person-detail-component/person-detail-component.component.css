@@ -1,10 +1,10 @@
-.musician-detail {
+.person-detail {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-.musician-detail .list>li {
+.person-detail .list>li {
     background-color: rgb(255, 173, 144);
     margin: 2em;
     border-radius: .5em;

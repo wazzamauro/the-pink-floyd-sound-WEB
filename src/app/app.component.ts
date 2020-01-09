@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import {PersonServicesService} from './personServices/person-services.service';
+import { Component, Input, Output } from '@angular/core';
+import { PersonServicesService } from './personServices/person-services.service';
+import { Observable } from 'rxjs';
+import { Person } from './person';
+import { PersonComponentComponent } from './person-component/person-component.component';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +10,18 @@ import {PersonServicesService} from './personServices/person-services.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'The Pink Floyd Sound';
-  private personService:PersonServicesService;
+  selectedPerson: Person;
+  status:string;
 
-  constructor(){
-
+  constructor(private personService: PersonServicesService) {
   }
 
-  importPerson():void{
-    this.personService.importPerson();
+  importPerson() {
+    this.personService.importPerson().subscribe(status => this.status = status);
   }
+
+  onSelect(person: Person) {
+    this.selectedPerson = person;
+  }
+
 }
